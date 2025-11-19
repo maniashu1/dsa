@@ -2,6 +2,8 @@
 #include<utility>
 #include<vector>
 #include<list>
+#include<queue>
+#include<stack>
 using namespace std;
 
 // pair -> it lies inside the utility library
@@ -151,13 +153,108 @@ void explainList(){
 
    ls.push_front(7);
 
-   ls.emplace_front(); {7 , 9};
+   //ls.emplace_front(); {7 , 9};
 
    // rest function same as vector
    // begin , end , rbegin , clear , insert , size , swap etc...
 
 }
 
+void explainDeque(){
+
+  deque<int> dq;
+  dq.push_back(3);
+  dq.emplace_back(4);
+  dq.push_front(4);
+  dq.emplace_front(9);
+
+  dq.back();
+  dq.front();
+  // rest function same as vector
+  // begin , rbegin , rend , clear , insert , size , swap etc .... 
+
+  for (auto el : dq){
+    cout << dq[el] << " ";
+  }
+}
+
+void explainStack(){  // it is LIFO -> i.e last in first out 
+   stack<int> st;
+   st.push(5);
+   st.push(7);
+   st.push(8);
+   st.push(4);
+   st.push(2);
+   st.push(9);
+   st.emplace(6);
+
+   cout << st.top() ; // it print 6 which is top odf the stack "** st[2] is invalid **"
+
+   st.pop();  // it wil pop the top element from the stack 
+
+   cout << st.top() ;  // it will print 9
+
+   cout << st.size() ; // it will print the size of the stack
+
+   cout << st.empty() ; // it will return true if stack is empty else it will return true 
+
+   stack<int> st1 , st2;
+   st1.swap(st2);    // swap st1 with st2
+}
+
+void explainQueue(){   // it is FIFO -> i.e first in first out ...
+queue<int> q;
+q.push(1); // {1}
+q.push(2) ; // {1, 2}
+q.emplace(4); // {1, 2, 4}
+
+q.back() += 5 ; // 5 will get added into the 4 and makes it 9
+
+cout << q.back(); // it will prints 9
+
+// now q is containing {1, 2, 9}
+
+cout << q.front() ; // it will print 1
+
+q.pop() ; // it will pop 1 from the queue and rmaining queue will be {2, 9}
+
+cout << q.front(); // it will print 2
+
+// all other function like swap, size, etc same as above..
+ 
+
+}
+
+
+// Largest value always stay on the top 
+
+void explainPriorityQueue(){
+  priority_queue<int> pq;
+
+  pq.push(5); // {5}
+  pq.push(2); // {5 , 2}
+  pq.push(8); // {8 , 5 , 2}
+  pq.emplace(10); // {10, 8, 5, 2}
+
+  cout << pq.top(); // prints 10
+
+  pq.pop(); // it will pop out 10 and remaining element {8, 5, 2}
+
+  cout << pq.top(); // now it will print 8
+
+  // size , swap, empty etc... function same as others
+
+  // minimum heap
+
+  priority_queue<int, vector<int>, greater<int>> pq; // it kept minimum element at the top 
+  pq.push(5); // {5}
+  pq.push(2); // {2, 5}
+  pq.push(8); // {2, 5, 8}
+  pq.emplace(10); // {2, 5, 8, 10}
+
+  cout << pq.top(); // it will print 2
+
+}
 
 
 int main(){
@@ -168,6 +265,13 @@ int main(){
 
  // explainList();
 
+  // explainDeque();
+
+ //  explainStack();
+
+  // explainQueue();
+
+   explainPriorityQueue();
 
     return 0;
 }

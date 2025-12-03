@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-// Brute force approach
+// Brute force approach 
+
 void leftRotatedArraybyk(int arr[] , int k , int n){
    int d = k % n;
    int temp[d];
@@ -13,6 +14,7 @@ void leftRotatedArraybyk(int arr[] , int k , int n){
    for(int i=d; i<n; i++){
     arr[i-d] = arr[i];
    }
+
    int j = 0;
    for(int i=n-d; i<n; i++){
      arr[i] = temp[j];
@@ -49,7 +51,6 @@ int main(){
     leftRotatedArraybyk(arr,k,n);
 
     Display(arr,n);
-
 
     return 0;
 }

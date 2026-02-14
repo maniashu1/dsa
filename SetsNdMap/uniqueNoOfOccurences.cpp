@@ -7,6 +7,8 @@
 #include<unordered_set>
 using namespace std;
 
+// solution using sets and map
+
 bool uniqueOccurrences(vector<int>& arr) {
         int n = arr.size();
         unordered_map<int,int> mp;
@@ -27,3 +29,5 @@ bool uniqueOccurrences(vector<int>& arr) {
 
         return 0;
     }
+
+    

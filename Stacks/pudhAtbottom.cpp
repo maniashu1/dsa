@@ -24,6 +24,20 @@ void pushAtbottom(stack<int>& st , int val){
     }
 }
 
+// push at bottom recursively
+
+void pushAtbottomrec(stack<int>& st , int val){
+    if(st.size() == 0){
+        st.push(val);
+        return ;
+    }
+    int x = st.top();
+    st.pop();
+    pushAtbottomrec(st , val);
+    st.push(x);
+}
+
+
 // push at any index
 
 void pushAtindex(stack<int>& st , int idx , int val){
@@ -38,6 +52,19 @@ void pushAtindex(stack<int>& st , int idx , int val){
         temp.pop();
     }
 }
+
+// reverse stack using recursion
+
+void reverse(stack<int>& st){
+    if(st.size() == 1){
+        return ;
+    }
+    int x = st.top();
+    st.pop();
+    reverse(st);
+    pushAtbottom(st,x);
+}
+
 
 int main (){
 
@@ -54,6 +81,14 @@ pushAtbottom(st,80);
 display(st);
 
 pushAtindex(st,2,90);
+
+display(st);
+
+pushAtbottomrec(st,-30);
+
+display(st);
+
+reverse(st);
 
 display(st);
 

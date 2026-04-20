@@ -2,12 +2,26 @@
 #include<stack>
 using namespace std;
 
+void displayrec(stack<int>& st){
+    if(st.size() == 0){
+        return ;
+    }
+    int x = st.top();
+    cout << x << " ";
+    st.pop();
+    displayrec(st);
+    st.push(x);
+    cout << endl;
+}
+
+
 int main (){
 stack<int> st;
 st.push(10);
 st.push(20);
 st.push(30);
 st.push(40);
+displayrec(st);
 cout << st.size() << endl;
 
 // printing the element of the stack but stack get also empty

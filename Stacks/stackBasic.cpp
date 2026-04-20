@@ -34,6 +34,7 @@ while(temp.size() > 0){
 
 stack<int> temp2;
 // psuhing all the element on other stack
+
 while(st.size() > 0){
     int x = st.top();
     temp2.push(x);
@@ -47,5 +48,8 @@ while(temp2.size() > 0){
     temp2.pop();
     st.push(x);
 }
+//we can also do the above task by using 3 stack
+
+
     return 0;
-}
+}  

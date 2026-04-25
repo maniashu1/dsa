@@ -18,7 +18,7 @@ int main(){
 
     int pge[n];
     // last element of the array has no next greater element 
-    pge[0] = -1;
+    pge[0] = 1;
     for(int i=1; i<n; i++){
       // pop all the element smaller than arr[i]
       while(st.size() > 0 && st.top() <= arr[i]){

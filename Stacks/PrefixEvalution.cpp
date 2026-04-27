@@ -22,7 +22,7 @@ int main(){
 
   stack<int> val;
 
-  for(int i=s.length() - 1; i>=0; i--){
+  for(int i=s.length() - 1; i>=0; i--){  // reverse loop 
     // checking if s[i] is a digit ( 0 - 9 )
     if(s[i] >= 48 && s[i] <= 57){
         val.push(s[i] - '0');    // converting character to integer before pushing 

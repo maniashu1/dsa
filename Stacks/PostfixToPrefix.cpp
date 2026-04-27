@@ -8,8 +8,8 @@ using namespace std;
 
 string solve(string val1 , string val2 , char ch){
     string s;
-    s += val1;
     s.push_back(ch);
+    s += val1;
     s += val2;
     return s;
 }

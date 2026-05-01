@@ -1,5 +1,7 @@
 // Leetcode 232 ( Implementing Queue using stack )
 
+// push efficient approach
+
 #include<iostream>
 #include<stack>
 #include<vector>

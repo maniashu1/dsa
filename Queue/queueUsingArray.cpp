@@ -101,7 +101,12 @@ int main(){
 
     q.display();
 
+    q.pop();
+    q.pop();
+    q.pop();
 
+    cout << q.front() << endl;
+    
 
     return 0;
 }

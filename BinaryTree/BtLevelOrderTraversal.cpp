@@ -16,11 +16,13 @@ class TreeNode{
     }
 };
 
-
-int levels(TreeNode* root){
+    // calculating number of levels
+    int levels(TreeNode* root){
         if(root == NULL) return 0;
         return 1 + max(levels(root->left) , levels(root->right));
     }
+
+    // printing val of nth level
     void nthLevels(TreeNode* root , int curr , int val, vector<int>& v){
         if(root == NULL) return;
         if(curr == val){
@@ -30,6 +32,8 @@ int levels(TreeNode* root){
         nthLevels(root->left,curr+1,val,v);
         nthLevels(root->right,curr+1,val,v);
     }
+
+    
     void lorder(TreeNode* root, vector<vector<int>>& ans){
         int n = levels(root);
         for(int i=1; i<=n; i++){

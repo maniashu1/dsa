@@ -343,8 +343,6 @@ void explainMap(){
 
   mpp.insert({2,4}) ; // it will also stored in the same manner 
 
-  mpp[{2,3}] = 10; 
-
   // {
   //   {1,2}
   //   {2,4}

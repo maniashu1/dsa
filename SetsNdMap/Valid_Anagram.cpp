@@ -33,5 +33,5 @@ bool isAnagram(string s, string t) {
 
     int main(){
 
-        retrurn 0;
+        return 0;
     }

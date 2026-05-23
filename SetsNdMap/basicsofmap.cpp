@@ -26,7 +26,6 @@ int main(){
     cout << p.first << " " << p.second << endl;
   }
 
-  
 
     return 0;
 }

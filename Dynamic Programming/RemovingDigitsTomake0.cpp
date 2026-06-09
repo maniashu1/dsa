@@ -13,6 +13,8 @@ Explanation: 27 -> 20 -> 18 -> 10 -> 9 -> 0
 
 */
 
+// fun(n) = 1 + min(ans,fun(n-d[i]));
+
 #include<iostream>
 #include<vector>
 #include<algorithm>

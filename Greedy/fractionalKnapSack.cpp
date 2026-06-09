@@ -36,10 +36,10 @@ double fractionalKnapsack(vector<int>& profit , vector<int>& weights , int n, in
 
 int main(){
 
-    vector<int> profits = {100 , 200 , 500};
-    vector<int> weights = {3 , 5 , 9};
+    vector<int> profits = {25 , 24 , 15};
+    vector<int> weights = {18 , 15 , 10};
     int n = 3;
-    double w = 10;
+    double w = 20;
 
     double ans = fractionalKnapsack(profits,weights,n,w);
 

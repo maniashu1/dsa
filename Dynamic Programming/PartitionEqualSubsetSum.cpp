@@ -22,7 +22,7 @@ public:
          if(dp[idx][target] != -1) return dp[idx][target];
 
          bool dontPick = subsetSum(nums,idx+1,target);
-         bool pick = false;
+         bool pick = false; // if we initialize pick inside if condition then there scope is with in if { }
          if(nums[idx] <= target){
             pick = subsetSum(nums,idx+1,target-nums[idx]);
          }

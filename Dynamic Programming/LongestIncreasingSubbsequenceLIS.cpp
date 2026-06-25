@@ -24,7 +24,7 @@ public:
                 mx = max(mx,fun(j));
             }
         }
-        
+
         // corner case if not any smaller element present 
         // i.e, all the element is same and array is in decreasing order
         if(mx == INT_MIN) return dp[i] = 1;
@@ -42,6 +42,27 @@ public:
             ans = max(ans,fun(i));
         } 
         return ans;
+    }
+};
+
+// Lis finding using tabulation method 
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+       int n = nums.size();
+       vector<int>dp(n,0);
+       int mx = 0;
+       for(int i=0; i<n; i++){
+        for(int j=0; j<=i-1; j++){
+            if(nums[j] < nums[i]){
+                dp[i] = max(dp[i],dp[j]);
+            }
+        }
+        dp[i] += 1;
+        mx = max(mx,dp[i]);
+       }
+       return mx; 
     }
 };
 

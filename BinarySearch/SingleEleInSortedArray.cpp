@@ -30,6 +30,42 @@ public:
     }
 };
 
+// Optimise Approach using Binary Search . T.C -> O(log n)
+
+
+class Solution {
+public:
+    
+    int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        if(n==1) return nums[0];    // if array has only one elements 
+        if(nums[0] != nums[1]) return nums[0];  // if 1st element is the single element 
+        if(nums[n-1] != nums[n-2]) return nums[n-1];    // if last element is the single element 
+
+        int lo = 1;
+        int hi = n-2;
+        int mid = -1;
+
+        // we are talking about indexes
+        // (even,odd) -> element is on right half , eleminate Left
+        // (odd,evem) -> element id in left half , eleminate Right 
+
+        while(lo <= hi){
+            int mid = lo + (hi-lo)/2;
+            if(nums[mid] != nums[mid-1] && nums[mid] != nums[mid+1]){
+                return nums[mid];
+            }
+            // we are in left half
+            if(mid%2==1 && nums[mid] == nums[mid-1] || mid%2==0 && nums[mid] == nums[mid+1]){
+                lo = mid+1;
+            } else {  // we are on wright half 
+                hi = mid-1;
+            }
+        }
+        return -1;
+
+    }
+};
 
 
 int main(){
